@@ -16,5 +16,11 @@ export class AppComponent {
     {id: 4, nombre: 'Larry', pais: 'Argentina'},
     {id: 5, nombre: 'Lyra', pais: 'Venezuela'},
   ];
+  empleadoSeleccionado: Empleado = new Empleado;
 
+  onSave() {
+    this.empleadoSeleccionado.id = this.empleadoArray.length + 1;
+    this.empleadoArray.push(this.empleadoSeleccionado);
+    this.empleadoSeleccionado = new Empleado();
+  }
 }
