@@ -12,7 +12,12 @@
   <div class="row">
     <div class="col-md-8 mt-4 mx-auto">
       <ul class="list-group">
-        <li *ngFor="let empleado of empleadoArray" class="list-group-item list-group-item-action">
+        <li 
+          *ngFor="let empleado of empleadoArray" 
+          class="list-group-item list-group-item-action"
+          (click)="onSelectEmployee(empleado)"
+          [class.active]="empleado === empleadoSeleccionado"
+        >
           <span class="badge badge-dark">
             {{ empleado.id }}
           </span>

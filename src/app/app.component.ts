@@ -18,9 +18,18 @@ export class AppComponent {
   ];
   empleadoSeleccionado: Empleado = new Empleado;
 
+  onSelectEmployee(empleado: Empleado) {
+    this.empleadoSeleccionado = empleado;
+  }
+
   onSave() {
-    this.empleadoSeleccionado.id = this.empleadoArray.length + 1;
-    this.empleadoArray.push(this.empleadoSeleccionado);
+    if (this.empleadoSeleccionado.id === 0) {
+      this.empleadoSeleccionado.id = this.empleadoArray.length + 1;
+      this.empleadoArray.push(this.empleadoSeleccionado);
+    } else {
+      // Actualmente está modificando directamente en el arreglo
+    }
     this.empleadoSeleccionado = new Empleado();
   }
+
 }
