@@ -16,10 +16,11 @@ export class AppComponent {
     {id: 4, nombre: 'Larry', pais: 'Argentina'},
     {id: 5, nombre: 'Lyra', pais: 'Venezuela'},
   ];
-  empleadoSeleccionado: Empleado = new Empleado;
+  empleadoSeleccionado: Empleado = new Empleado();
 
   onSelectEmployee(empleado: Empleado) {
     this.empleadoSeleccionado = empleado;
+    console.log(this.empleadoSeleccionado.id);
   }
 
   onSave() {
@@ -32,4 +33,13 @@ export class AppComponent {
     this.empleadoSeleccionado = new Empleado();
   }
 
+  onDelete() {
+    if (confirm('Eliminar este empleado?')) {
+      this.empleadoArray = this.empleadoArray
+      .filter(
+        item => item !== this.empleadoSeleccionado
+      );
+    }
+    this.empleadoSeleccionado = new Empleado();
+  }
 }

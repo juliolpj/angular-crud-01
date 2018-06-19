@@ -53,6 +53,13 @@
           <button class="btn btn-primary" (click)="onSave()">
             Guardar
           </button>
+          <button 
+            class="btn btn-danger" 
+            (click)="onDelete()"
+            *ngIf="empleadoSeleccionado.id !== 0"
+          >
+            Eliminar
+          </button>
         </div>
       </div>
 
