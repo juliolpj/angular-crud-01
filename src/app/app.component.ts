@@ -7,8 +7,8 @@ import { Empleado } from './models/empleado';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 1.0';
-  descrip = 'Simple, un solo componente, no usa servicio';
+  title = 'CRUD 1.1';
+  descrip = 'Agregar NavBar Component / usar @Input';
   empleadoArray: Empleado[]
    = [
     {id: 1, nombre: 'Gabriel', pais: 'Venezuela'},
