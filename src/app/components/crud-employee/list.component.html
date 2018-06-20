@@ -4,7 +4,7 @@
       <li 
         *ngFor="let empleado of empleadoArray" 
         class="list-group-item list-group-item-action"
-        (click)="onSelectEmployee(empleado)"
+        (click)="fireSelectEmployee(empleado)"
         [class.active]="empleado === empleadoSeleccionado"
       >
         <span class="badge badge-dark">

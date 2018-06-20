@@ -3,6 +3,7 @@
   <app-list
     [empleadoArray]="empleadoArray"
     [empleadoSeleccionado]="empleadoSeleccionado"
+    (selectEmployee)="empleadoSeleccionado=$event"
   ></app-list>
 
   <!-- Formulario de empleados -->
@@ -26,7 +27,7 @@
               [(ngModel)]="empleadoSeleccionado.pais" 
               >
           </div>
-
+  
           <button class="btn btn-primary" (click)="onSave()">
             Guardar
           </button>
@@ -39,7 +40,7 @@
           </button>
         </div>
       </div>
-
+  
     </div>
   </div>
 </div>

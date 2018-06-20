@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CrudEmployeeComponent } from './components/crud-employee/crud-employee.component';
 import { ListComponent } from './components/crud-employee/list.component';
+import { FormComponent } from './components/crud-employee/form.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ListComponent } from './components/crud-employee/list.component';
     AppComponent,
     NavbarComponent,
     CrudEmployeeComponent,
-    ListComponent
+    ListComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule, FormsModule
