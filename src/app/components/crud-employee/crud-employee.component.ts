@@ -23,11 +23,6 @@ export class CrudEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelectEmployee(empleado: Empleado) {
-    this.empleadoSeleccionado = empleado;
-    console.log(this.empleadoSeleccionado.id);
-  }
-
   onSave() {
     if (this.empleadoSeleccionado.id === 0) {
       this.empleadoSeleccionado.id = this.empleadoArray.length + 1;

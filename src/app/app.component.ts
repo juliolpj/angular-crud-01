@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 1.2';
-  descrip = 'Agregar CRUD Component';
+  title = 'CRUD 1.3';
+  descrip = 'Lista de empleados como un componente separado';
 
 }
