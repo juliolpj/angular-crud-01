@@ -7,40 +7,9 @@
   ></app-list>
 
   <!-- Formulario de empleados -->
-  <div class="row">
-    <div class="col-md-8 mt-4 mx-auto">
-      <div class="card">
-        <div class="card-header">
-          Empleados
-        </div>
-        
-        <div class="card-body">
-          <div class="form-group">
-            <input 
-              type="text" class="form-control" placeholder="Nombre"
-              [(ngModel)]="empleadoSeleccionado.nombre"
-              >
-          </div>
-          <div class="form-group">
-            <input 
-              type="text" class="form-control" placeholder="País"
-              [(ngModel)]="empleadoSeleccionado.pais" 
-              >
-          </div>
-  
-          <button class="btn btn-primary" (click)="onSave()">
-            Guardar
-          </button>
-          <button 
-            class="btn btn-danger" 
-            (click)="onDelete()"
-            *ngIf="empleadoSeleccionado.id !== 0"
-          >
-            Eliminar
-          </button>
-        </div>
-      </div>
-  
-    </div>
-  </div>
+  <app-form
+    [empleadoSeleccionado]="empleadoSeleccionado"
+    (deleteEmployee)="cathDeleteEmployee($event)"
+    (addEmployee)="cathAddEmployee($event)"
+  ></app-form>
 </div>

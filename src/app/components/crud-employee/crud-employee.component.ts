@@ -23,22 +23,20 @@ export class CrudEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSave() {
-    if (this.empleadoSeleccionado.id === 0) {
-      this.empleadoSeleccionado.id = this.empleadoArray.length + 1;
-      this.empleadoArray.push(this.empleadoSeleccionado);
+  cathAddEmployee(empleado: Empleado) {
+    if (empleado.id === 0) {
+      empleado.id = this.empleadoArray.length + 1;
+      this.empleadoArray.push(empleado);
     } else {
       // Actualmente está modificando directamente en el arreglo
     }
     this.empleadoSeleccionado = new Empleado();
   }
 
-  onDelete() {
+  cathDeleteEmployee(empleado: Empleado) {
     if (confirm('Eliminar este empleado?')) {
       this.empleadoArray = this.empleadoArray
-      .filter(
-        item => item !== this.empleadoSeleccionado
-      );
+      .filter( item => item !== empleado);
     }
     this.empleadoSeleccionado = new Empleado();
   }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 1.4';
-  descrip = 'Uso de @Ouput() para enviar el empleado seleccionado de la listComponent a crudEployeeComponent';
+  title = 'CRUD 1.5';
+  descrip = 'Form como un componente separado';
 
 }
