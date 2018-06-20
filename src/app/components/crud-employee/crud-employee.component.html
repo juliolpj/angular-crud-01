@@ -1,0 +1,59 @@
+<div class="container">
+  <!-- Lista de empleados -->
+  <div class="row">
+    <div class="col-md-8 mt-4 mx-auto">
+      <ul class="list-group">
+        <li 
+          *ngFor="let empleado of empleadoArray" 
+          class="list-group-item list-group-item-action"
+          (click)="onSelectEmployee(empleado)"
+          [class.active]="empleado === empleadoSeleccionado"
+        >
+          <span class="badge badge-dark">
+            {{ empleado.id }}
+          </span>
+          {{ empleado.nombre }} - {{ empleado.pais }}
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Formulario de empleados -->
+  <div class="row">
+    <div class="col-md-8 mt-4 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          Empleados
+        </div>
+        
+        <div class="card-body">
+          <div class="form-group">
+            <input 
+              type="text" class="form-control" placeholder="Nombre"
+              [(ngModel)]="empleadoSeleccionado.nombre"
+              >
+          </div>
+          <div class="form-group">
+            <input 
+              type="text" class="form-control" placeholder="País"
+              [(ngModel)]="empleadoSeleccionado.pais" 
+              >
+          </div>
+
+          <button class="btn btn-primary" (click)="onSave()">
+            Guardar
+          </button>
+          <button 
+            class="btn btn-danger" 
+            (click)="onDelete()"
+            *ngIf="empleadoSeleccionado.id !== 0"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

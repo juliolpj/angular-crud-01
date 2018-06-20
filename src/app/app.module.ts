@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CrudEmployeeComponent } from './components/crud-employee/crud-employee.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    CrudEmployeeComponent
   ],
   imports: [
     BrowserModule, FormsModule
