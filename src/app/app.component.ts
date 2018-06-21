@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 1.6';
-  descrip = 'Crear servicio';
-
+  title = 'CRUD 2.0';
+  descrip = 'Uso de varios componentes y de servicio';
 }
