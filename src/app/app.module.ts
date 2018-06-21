@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { EmployeeService } from './services/employee.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CrudEmployeeComponent } from './components/crud-employee/crud-employee.component';
@@ -20,7 +22,7 @@ import { FormComponent } from './components/crud-employee/form.component';
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
