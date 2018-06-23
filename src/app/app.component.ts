@@ -17,9 +17,14 @@ export class AppComponent {
     {id: 5, nombre: 'Lyra', pais: 'Venezuela'},
   ];
   empleadoSeleccionado: Empleado = new Empleado();
+  formNombre = '';
+  formPais = ''
 
   onSelectEmployee(empleado: Empleado) {
     this.empleadoSeleccionado = empleado;
+    this.formNombre = empleado.nombre;
+    this.formPais = empleado.pais;
+
     console.log(this.empleadoSeleccionado.id);
   }
 
