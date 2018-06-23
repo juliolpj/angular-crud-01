@@ -10,16 +10,19 @@ import { EmployeeService } from '../../services/employee.service';
 export class CrudEmployeeComponent implements OnInit {
   public empleadoArray: Empleado[];
   public empleadoSeleccionado: Empleado = new Empleado();
+  public crudStatus: String;
 
   constructor(private employeeService: EmployeeService) {
   }
 
   ngOnInit() {
     this.empleadoArray = this.employeeService.getEmployees();
+    this.crudStatus = '';
   }
 
   catchSelectEmployee(empleado: Empleado) {
     this.empleadoSeleccionado = empleado;
+    this.crudStatus = 'consultar';
   }
 
   cathAddEmployee(empleado: Empleado) {

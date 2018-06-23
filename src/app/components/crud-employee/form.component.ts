@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
   @Input() empleadoSeleccionado;
   @Input() formNombre;
   @Input() formPais;
+  @Input() crudStatus;
 
   @Output() deleteEmployee = new EventEmitter<Empleado>();
   @Output() addEmployee = new EventEmitter<Empleado>();
