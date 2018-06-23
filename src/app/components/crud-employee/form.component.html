@@ -9,13 +9,13 @@
         <div class="form-group">
           <input 
             type="text" class="form-control" placeholder="Nombre"
-            [(ngModel)]="empleadoSeleccionado.nombre"
+            [(ngModel)]="formNombre"
             >
         </div>
         <div class="form-group">
           <input 
             type="text" class="form-control" placeholder="País"
-            [(ngModel)]="empleadoSeleccionado.pais" 
+            [(ngModel)]="formPais" 
             >
         </div>
 
@@ -28,6 +28,11 @@
           (click)="fireDeleteEmployee(empleadoSeleccionado)"
           *ngIf="empleadoSeleccionado.id !== 0"
         > Eliminar</button>
+        <button 
+          class="btn btn-secondary" 
+          (click)="fireCancelEmployee(empleadoSeleccionado)"
+          *ngIf="empleadoSeleccionado.id !== 0"
+      > Cancelar</button>
       </div>
     </div>
 

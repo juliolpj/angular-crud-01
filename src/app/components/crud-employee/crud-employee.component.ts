@@ -18,8 +18,12 @@ export class CrudEmployeeComponent implements OnInit {
     this.empleadoArray = this.employeeService.getEmployees();
   }
 
+  catchSelectEmployee(empleado: Empleado) {
+    this.empleadoSeleccionado = empleado;
+  }
+
   cathAddEmployee(empleado: Empleado) {
-    this.employeeService.addEmployee(empleado);
+    this.empleadoArray = this.employeeService.addEmployee(empleado);
     this.empleadoSeleccionado = new Empleado();
   }
 
@@ -27,4 +31,10 @@ export class CrudEmployeeComponent implements OnInit {
     this.empleadoArray = this.employeeService.deleteEmployee(empleado);
     this.empleadoSeleccionado = new Empleado();
   }
+
+  cathCancelEmployee(empleado: Empleado) {
+    //this.empleadoArray = this.employeeService.deleteEmployee(empleado);
+    this.empleadoSeleccionado = new Empleado();
+  }
+
 }

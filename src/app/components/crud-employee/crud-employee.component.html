@@ -3,13 +3,16 @@
   <app-list
     [empleadoArray]="empleadoArray"
     [empleadoSeleccionado]="empleadoSeleccionado"
-    (selectEmployee)="empleadoSeleccionado=$event"
+    (selectEmployee)="catchSelectEmployee($event)"
   ></app-list>
 
   <!-- Formulario de empleados -->
   <app-form
-    [empleadoSeleccionado]="empleadoSeleccionado"
-    (deleteEmployee)="cathDeleteEmployee($event)"
+  [empleadoSeleccionado]="empleadoSeleccionado"
+  [formNombre]="empleadoSeleccionado.nombre"
+  [formPais]="empleadoSeleccionado.pais"
+  (deleteEmployee)="cathDeleteEmployee($event)"
     (addEmployee)="cathAddEmployee($event)"
+    (cancelEmployee)="cathCancelEmployee($event)"
   ></app-form>
 </div>

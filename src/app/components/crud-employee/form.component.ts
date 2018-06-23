@@ -8,8 +8,12 @@ import { Empleado } from '../../models/empleado';
 })
 export class FormComponent implements OnInit {
   @Input() empleadoSeleccionado;
+  @Input() formNombre;
+  @Input() formPais;
+
   @Output() deleteEmployee = new EventEmitter<Empleado>();
   @Output() addEmployee = new EventEmitter<Empleado>();
+  @Output() cancelEmployee = new EventEmitter<Empleado>();
   constructor() { }
 
   ngOnInit() {
@@ -22,4 +26,9 @@ export class FormComponent implements OnInit {
   fireAddEmployee(empleado: Empleado) {
     this.addEmployee.emit(empleado);
   }
+
+  fireCancelEmployee(empleado: Empleado) {
+    this.cancelEmployee.emit(empleado);
+  }
+
 }

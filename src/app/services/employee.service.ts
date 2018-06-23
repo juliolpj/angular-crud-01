@@ -23,6 +23,7 @@ export class EmployeeService {
   addEmployee(empleado: Empleado) {
     empleado.id = this.empleados.length + 1;
     this.empleados.push(empleado);
+    return this.empleados;
   }
 
   deleteEmployee(empleado: Empleado) {
