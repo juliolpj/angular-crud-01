@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
   @Input() crudStatus;
 
   @Output() deleteEmployee = new EventEmitter<Empleado>();
-  @Output() addEmployee = new EventEmitter<Empleado>();
+  @Output() okEmployee = new EventEmitter<Empleado>();
   @Output() cancelEmployee = new EventEmitter<Empleado>();
   @Output() cancelSelect = new EventEmitter();
   constructor() { }
@@ -25,12 +25,21 @@ export class FormComponent implements OnInit {
     this.deleteEmployee.emit(empleado);
   }
 
-  fireAddEmployee(empleado: Empleado) {
-    this.addEmployee.emit(empleado);
+  fireOk() {
+    this.okEmployee.emit({
+        id: 0, nombre: this.formNombre, pais: this.formPais
+    });
+    this.onCancel();
   }
 
-  fireCancelEmployee(empleado: Empleado) {
-    this.cancelEmployee.emit(empleado);
+  onCancel() {
+    this.crudStatus = '';
+    this.formNombre = '';
+    this.formPais = '';
+  }
+
+  onAdd() {
+    this.crudStatus = 'agregar';
   }
 
   fireCancelSelect() {

@@ -25,7 +25,7 @@ export class CrudEmployeeComponent implements OnInit {
     this.crudStatus = 'consultar';
   }
 
-  cathAddEmployee(empleado: Empleado) {
+  cathOkEmployee(empleado: Empleado) {
     this.empleadoArray = this.employeeService.addEmployee(empleado);
     this.empleadoSeleccionado = new Empleado();
   }

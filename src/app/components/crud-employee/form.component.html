@@ -2,7 +2,9 @@
   <div class="col-md-8 mt-4 mx-auto">
     <div class="card">
       <div class="card-header">
-        <span>Empleados</span>  
+        <span>Empleados</span>
+        <small class="text-muted"> {{crudStatus}} </small>
+
         <button 
           class="btn btn-warning float-right mr-1"
           (click)="fireCancelSelect()"
@@ -21,6 +23,7 @@
         
         <button 
           class="btn btn-primary float-right mr-1"
+          (click)="onAdd()"
           *ngIf="crudStatus === ''"
         > <span><i class="fa fa-plus"></i></span> </button>
 
@@ -43,14 +46,14 @@
         </div>
         <button 
           class="btn btn-primary" 
-          (click)="fireAddEmployee(empleadoSeleccionado)"
-          *ngIf="crudStatus === 'modificar' || crudStatus === 'eliminar'"
+          (click)="fireOk()"
+          *ngIf="crudStatus === 'agregar' || crudStatus === 'modificar' || crudStatus === 'eliminar'"
         > <span><i class="fa fa-check"></i></span> Aceptar </button>
 
         <button 
           class="btn btn-secondary float-right" 
-          (click)="fireCancelEmployee(empleadoSeleccionado)"
-          *ngIf="crudStatus === 'modificar' || crudStatus === 'eliminar'"
+          (click)="onCancel()"
+          *ngIf="crudStatus === 'agregar' || crudStatus === 'modificar' || crudStatus === 'eliminar'"
         > <span><i class="fa fa-undo"></i></span> Cancelar </button>
       </div>
     </div>
