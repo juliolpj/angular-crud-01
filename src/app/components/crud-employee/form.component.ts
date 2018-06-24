@@ -16,6 +16,9 @@ export class FormComponent implements OnInit {
   @Output() okEmployee = new EventEmitter<Empleado>();
   @Output() cancelEmployee = new EventEmitter<Empleado>();
   @Output() cancelSelect = new EventEmitter();
+
+  @Output() changeStatus = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
@@ -26,10 +29,11 @@ export class FormComponent implements OnInit {
   }
 
   fireOk() {
+    console.log('fireok: ', this.crudStatus);
     this.okEmployee.emit({
         id: 0, nombre: this.formNombre, pais: this.formPais
     });
-    this.onCancel();
+    //this.onCancel();
   }
 
   onCancel() {
@@ -38,10 +42,16 @@ export class FormComponent implements OnInit {
     this.formPais = '';
   }
 
-  onAdd() {
-    this.crudStatus = 'agregar';
+  fireChangeStatus(status) {
+    this.crudStatus = status;
+    console.log('fireChangeStatus: ', this.crudStatus);
+    this.changeStatus.emit(this.crudStatus);
   }
 
+  onEdit() {
+    this.crudStatus = 'modificar';
+  }
+  
   fireCancelSelect() {
     this.cancelSelect.emit();
   }

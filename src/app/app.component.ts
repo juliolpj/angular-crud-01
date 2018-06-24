@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 2.6';
-  descrip = 'Botón agregar';
+  title = 'CRUD 2.7';
+  descrip = 'Botón modificar';
 }

@@ -26,7 +26,19 @@ export class CrudEmployeeComponent implements OnInit {
   }
 
   cathOkEmployee(empleado: Empleado) {
-    this.empleadoArray = this.employeeService.addEmployee(empleado);
+    console.log('catchOk: ', this.crudStatus);
+    switch (this.crudStatus) {
+      case 'agregar':
+        this.empleadoArray = this.employeeService.addEmployee(empleado);
+        break;
+    
+      case 'modificar':
+        this.empleadoArray = this.employeeService.editEmployee(empleado);
+        break;
+
+      default:
+        break;
+    }
     this.empleadoSeleccionado = new Empleado();
   }
 
@@ -43,5 +55,10 @@ export class CrudEmployeeComponent implements OnInit {
   cathCancelSelect() {
     this.crudStatus = '';
     this.empleadoSeleccionado = new Empleado();
+  }
+
+  cathChangeStatus(status) {
+    this.crudStatus = status;
+    console.log('catchChangeStatus: ', this.crudStatus);
   }
 }

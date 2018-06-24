@@ -26,6 +26,17 @@ export class EmployeeService {
     return this.empleados;
   }
 
+  editEmployee(empleado: Empleado) {
+    this.empleados.forEach(item => {
+      if (item.id === empleado.id) {
+        item.nombre = empleado.nombre;
+        item.pais = empleado.pais;
+        console.log(item);
+      }
+    })
+    return this.empleados;
+  }
+  
   deleteEmployee(empleado: Empleado) {
     this.empleados = this.empleados.filter( item => item !== empleado);
     return this.empleados;
