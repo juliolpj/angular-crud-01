@@ -8,12 +8,14 @@
 
   <!-- Formulario de empleados -->
   <app-form
-  [empleadoSeleccionado]="empleadoSeleccionado"
-  [formNombre]="empleadoSeleccionado.nombre"
-  [formPais]="empleadoSeleccionado.pais"
-  [crudStatus]="crudStatus"
-  (deleteEmployee)="cathDeleteEmployee($event)"
+    [empleadoSeleccionado]="empleadoSeleccionado"
+    [formNombre]="empleadoSeleccionado.nombre"
+    [formPais]="empleadoSeleccionado.pais"
+    [crudStatus]="crudStatus"
+    
+    (deleteEmployee)="cathDeleteEmployee($event)"
     (addEmployee)="cathAddEmployee($event)"
     (cancelEmployee)="cathCancelEmployee($event)"
+    (cancelSelect)="cathCancelSelect()"
   ></app-form>
 </div>

@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
   @Output() deleteEmployee = new EventEmitter<Empleado>();
   @Output() addEmployee = new EventEmitter<Empleado>();
   @Output() cancelEmployee = new EventEmitter<Empleado>();
+  @Output() cancelSelect = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -32,4 +33,7 @@ export class FormComponent implements OnInit {
     this.cancelEmployee.emit(empleado);
   }
 
+  fireCancelSelect() {
+    this.cancelSelect.emit();
+  }
 }

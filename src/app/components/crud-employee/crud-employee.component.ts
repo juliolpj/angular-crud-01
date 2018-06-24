@@ -40,4 +40,8 @@ export class CrudEmployeeComponent implements OnInit {
     this.empleadoSeleccionado = new Empleado();
   }
 
+  cathCancelSelect() {
+    this.crudStatus = '';
+    this.empleadoSeleccionado = new Empleado();
+  }
 }

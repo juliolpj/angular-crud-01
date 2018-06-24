@@ -5,6 +5,7 @@
         <span>Empleados</span>  
         <button 
           class="btn btn-warning float-right mr-1"
+          (click)="fireCancelSelect()"
           *ngIf="crudStatus === 'consultar'"
         > <span><i class="fa fa-undo"></i></span> </button>
         
