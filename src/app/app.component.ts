@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 2.2';
-  descrip = 'Crear variable crudStatus y botones Inc, Mod, Elim';
+  title = 'CRUD 2.4';
+  descrip = 'Activar / Desactivar campos nombre y pais según el status';
 }
