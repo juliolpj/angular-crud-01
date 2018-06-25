@@ -5,14 +5,15 @@
         <span>Empleados</span>
         <small class="text-muted"> {{crudStatus}} </small>
 
-        <button 
+        <button  
           class="btn btn-warning float-right mr-1"
-          (click)="fireCancelSelect()"
+          (click)="onCancel()"
           *ngIf="crudStatus === 'consultar'"
         > <span><i class="fa fa-undo"></i></span> </button>
         
         <button 
           class="btn btn-danger float-right mr-1"
+          (click)="fireChangeStatus('eliminar')"
           *ngIf="crudStatus === 'consultar'"
         > <span><i class="fa fa-trash"></i></span> </button>
 

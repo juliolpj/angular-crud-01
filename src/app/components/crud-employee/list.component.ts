@@ -19,9 +19,4 @@ export class ListComponent implements OnInit {
   fireSelectEmployee(empleado: Empleado) {
     this.selectEmployee.emit(empleado);
   }
-
-  onSelectEmployee(empleado: Empleado) {
-    this.empleadoSeleccionado = empleado;
-    console.log(this.empleadoSeleccionado.id);
-  }
 }

@@ -8,15 +8,12 @@ import { Empleado } from '../../models/empleado';
 })
 export class FormComponent implements OnInit {
   @Input() empleadoSeleccionado;
+  @Input() formId;
   @Input() formNombre;
   @Input() formPais;
   @Input() crudStatus;
 
-  @Output() deleteEmployee = new EventEmitter<Empleado>();
   @Output() okEmployee = new EventEmitter<Empleado>();
-  @Output() cancelEmployee = new EventEmitter<Empleado>();
-  @Output() cancelSelect = new EventEmitter();
-
   @Output() changeStatus = new EventEmitter();
 
   constructor() { }
@@ -24,22 +21,12 @@ export class FormComponent implements OnInit {
   ngOnInit() {
   }
 
-  fireDeleteEmployee(empleado: Empleado) {
-    this.deleteEmployee.emit(empleado);
-  }
-
   fireOk() {
     console.log('fireok: ', this.crudStatus);
     this.okEmployee.emit({
-        id: 0, nombre: this.formNombre, pais: this.formPais
+        id: this.formId, nombre: this.formNombre, pais: this.formPais
     });
-    //this.onCancel();
-  }
-
-  onCancel() {
-    this.crudStatus = '';
-    this.formNombre = '';
-    this.formPais = '';
+    this.onCancel();
   }
 
   fireChangeStatus(status) {
@@ -47,12 +34,14 @@ export class FormComponent implements OnInit {
     console.log('fireChangeStatus: ', this.crudStatus);
     this.changeStatus.emit(this.crudStatus);
   }
-
-  onEdit() {
-    this.crudStatus = 'modificar';
-  }
   
-  fireCancelSelect() {
-    this.cancelSelect.emit();
+  onCancel() {
+    this.crudStatus = '';
+    this.formId = '';
+    this.formNombre = '';
+    this.formPais = '';
+
+    this.fireChangeStatus('');
   }
+
 }

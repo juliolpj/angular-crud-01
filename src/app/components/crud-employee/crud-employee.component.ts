@@ -42,11 +42,6 @@ export class CrudEmployeeComponent implements OnInit {
     this.empleadoSeleccionado = new Empleado();
   }
 
-  cathDeleteEmployee(empleado: Empleado) {
-    this.empleadoArray = this.employeeService.deleteEmployee(empleado);
-    this.empleadoSeleccionado = new Empleado();
-  }
-
   cathCancelEmployee(empleado: Empleado) {
     //this.empleadoArray = this.employeeService.deleteEmployee(empleado);
     this.empleadoSeleccionado = new Empleado();
@@ -59,6 +54,9 @@ export class CrudEmployeeComponent implements OnInit {
 
   cathChangeStatus(status) {
     this.crudStatus = status;
+    if (this.crudStatus === '') {
+      this.empleadoSeleccionado = new Empleado();
+    }
     console.log('catchChangeStatus: ', this.crudStatus);
   }
 }
