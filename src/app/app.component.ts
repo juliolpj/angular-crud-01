@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 2.7';
-  descrip = 'Botón modificar';
+  title = 'CRUD 2.8';
+  descrip = 'Botón eliminar';
 }

@@ -22,7 +22,6 @@ export class FormComponent implements OnInit {
   }
 
   fireOk() {
-    console.log('fireok: ', this.crudStatus);
     this.okEmployee.emit({
         id: this.formId, nombre: this.formNombre, pais: this.formPais
     });
@@ -31,10 +30,9 @@ export class FormComponent implements OnInit {
 
   fireChangeStatus(status) {
     this.crudStatus = status;
-    console.log('fireChangeStatus: ', this.crudStatus);
     this.changeStatus.emit(this.crudStatus);
   }
-  
+
   onCancel() {
     this.crudStatus = '';
     this.formId = '';

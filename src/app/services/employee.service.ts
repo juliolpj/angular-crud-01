@@ -31,14 +31,13 @@ export class EmployeeService {
       if (item.id === empleado.id) {
         item.nombre = empleado.nombre;
         item.pais = empleado.pais;
-        console.log(item);
       }
-    })
+    });
     return this.empleados;
   }
-  
+
   deleteEmployee(empleado: Empleado) {
-    this.empleados = this.empleados.filter( item => item !== empleado);
+    this.empleados = this.empleados.filter( item => item.id !== empleado.id);
     return this.empleados;
   }
 
