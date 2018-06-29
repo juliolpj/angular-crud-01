@@ -1,4 +1,6 @@
 <div class="container">
+  <p>empleadoSeleccionado: {{ empleadoSeleccionado.nombre }} </p>
+  <p>empleadoFormulario: {{ empleadoFormulario.nombre }} </p>
   <!-- Lista de empleados -->
   <app-list
     [empleadoArray]="empleadoArray"
@@ -8,9 +10,7 @@
 
   <!-- Formulario de empleados -->
   <app-form
-    [formId]="empleadoSeleccionado.id"
-    [formNombre]="empleadoSeleccionado.nombre"
-    [formPais]="empleadoSeleccionado.pais"
+    [formEmpleado]="empleadoFormulario"
     [crudStatus]="crudStatus"
     
     (changeStatus)="cathChangeStatus($event)"

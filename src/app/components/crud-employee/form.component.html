@@ -36,14 +36,14 @@
           <input 
             type="text" class="form-control" placeholder="Nombre"
             [disabled]="crudStatus === 'agregar'|| crudStatus === 'modificar' ? false : true"
-            [(ngModel)]="formNombre"
+            [(ngModel)]="formEmpleado.nombre"
             >
         </div>
         <div class="form-group">
           <input 
             type="text" class="form-control" placeholder="País"
             [disabled]="crudStatus === 'agregar'|| crudStatus === 'modificar' ? false : true"
-            [(ngModel)]="formPais" 
+            [(ngModel)]="formEmpleado.pais" 
             >
         </div>
         <button 

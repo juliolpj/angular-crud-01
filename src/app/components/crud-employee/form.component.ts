@@ -7,10 +7,7 @@ import { Empleado } from '../../models/empleado';
   styles: []
 })
 export class FormComponent implements OnInit {
-  @Input() empleadoSeleccionado;
-  @Input() formId;
-  @Input() formNombre;
-  @Input() formPais;
+  @Input() formEmpleado;
   @Input() crudStatus;
 
   @Output() okEmployee = new EventEmitter<Empleado>();
@@ -23,7 +20,9 @@ export class FormComponent implements OnInit {
 
   fireOk() {
     this.okEmployee.emit({
-        id: this.formId, nombre: this.formNombre, pais: this.formPais
+        id: this.formEmpleado.id, 
+        nombre: this.formEmpleado.nombre, 
+        pais: this.formEmpleado.pais
     });
     this.onCancel();
   }
@@ -35,10 +34,7 @@ export class FormComponent implements OnInit {
 
   onCancel() {
     this.crudStatus = '';
-    this.formId = '';
-    this.formNombre = '';
-    this.formPais = '';
-
+    this.formEmpleado = {id: 0, nombre:'', pais: ''};
     this.fireChangeStatus('');
   }
 
