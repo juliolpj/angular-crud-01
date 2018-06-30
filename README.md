@@ -18,6 +18,8 @@ LINK: https://youtu.be/arGRTVdG--c
 - Es una aplicación de un sólo componente
 - No usa servicios
 
+DEMO: https://juliolpj.github.io/simple-crud-v1/
+
 ## Versión 2.0
 Funcionalmente no difiere de la versión 1.0
 Aplicar arquitectura y mejores prácticas de Angular
@@ -26,6 +28,19 @@ Aplicar arquitectura y mejores prácticas de Angular
         - @Input y @Output para la comunicación entre componentes
     - Uso de servicio
 
-## Próxima versión
+DEMO: https://juliolpj.github.io/simple-crud-v2/
 
-- Mejoras de funcionalidad
+## Versión 3.0
+Cambios de funcionalidad
+- Botón para agregar
+- Cuando selecciona un registro aparecen los siguientes botones:
+  - Modificar
+  - Eliminar
+  - Cancelar selección
+- Los botones Guardar y Cancelar solo se muestran si hay una operación seleccionada
+
+DEMO: https://juliolpj.github.io/simple-crud-v3/
+
+## Próxima versión
+- Validaciones
+- Mostrar mensajes

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD 2.9';
-  descrip = 'Eliminar enlace directo del formulario y la lista';
+  title = 'CRUD 3.0';
+  descrip = 'Cambios de funcionalidad';
 }
